@@ -34,13 +34,14 @@ public class DbHelper extends SQLiteOpenHelper {
              "maDV INTEGER PRIMARY KEY AUTOINCREMENT, " +
              "tenDichVu text NOT NULL)";
      db.execSQL(createTableDichVu);
+
      String createTableSanPham="create table SanPham(" +
              "maSP INTEGER PRIMARY KEY AUTOINCREMENT, "+
              "tenSP text NOT NULL, " +
              "soLuong INTEGER NOT NULL, " +
              "tonKho INTEGER NOT NULL, " +
              "giaSP INTEGER NOT NULL, " +
-             "maDV INTERGER REFERENCES DichVuA(maDV))";
+             "maDV INTERGER REFERENCES DichVu(maDV))";
      db.execSQL(createTableSanPham);
      String createTableHoaDon="create table HoaDon(" +
              "maHD INTEGER PRIMARY KEY AUTOINCREMENT, " +
