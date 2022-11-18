@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F7C910"
     tools:context=".MainActivity">
 <ImageView
     android:id="@+id/imageView3"
@@ -30,6 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Tên Đăng Nhập"
+        android:textColorHint="@color/black"
         app:startIconDrawable="@drawable/ic_baseline_account_box_24"
         android:layout_marginTop="56dp"
         android:paddingLeft="20dp"
@@ -45,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000000"
+            android:background="#E3BA12"
             android:textColorHint="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -52,12 +55,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_tilpassword"
-
-
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-
         android:hint="Mật Khẩu"
+        android:textColorHint="@color/black"
         app:startIconDrawable="@drawable/ic_ock"
         android:layout_marginTop="25dp"
         android:paddingLeft="20dp"
@@ -72,7 +73,7 @@
             style=" "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:background="#E3BA12"
             android:inputType="textPassword"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -86,6 +87,7 @@
         android:layout_marginTop="11dp"
         android:layout_marginEnd="56dp"
         android:layout_weight="1"
+        app:cornerRadius = "10dp"
         android:text="Đăng nhập"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_checkBox" />
