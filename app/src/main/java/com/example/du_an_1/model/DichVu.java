@@ -27,4 +27,12 @@ public class DichVu {
     public void setTenDV(String tenDV) {
         this.tenDV = tenDV;
     }
+
+    @Override
+    public String toString() {
+        return "DichVu{" +
+                "maDV=" + maDV +
+                ", tenDV='" + tenDV + '\'' +
+                '}';
+    }
 }
