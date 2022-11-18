@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation">
+    <fragment
+        android:id="@+id/nav_qlphieuthu"
+        android:name="com.example.du_an_1.main.ui.QLHoaDon"
+        android:label="@string/menu_qlphieumuon"
+        tools:layout="@layout/fragment_q_l_hoa_don" />
+
+    <fragment
+        android:id="@+id/nav_qlloaisach"
+        android:name="com.example.du_an_1.main.ui.QLDichVu"
+        android:label="@string/menu_qlloaisach"
+        tools:layout="@layout/fragment_q_l_dich_vu" />
+
+    <fragment
+        android:id="@+id/nav_quanlysach"
+        android:name="com.example.du_an_1.main.ui.QLSanPham"
+        android:label="@string/menu_qlsach"
+        tools:layout="@layout/fragment_q_l_san_pham" />
+    <fragment
+        android:id="@+id/nav_qlthanhvien"
+        android:name="com.example.du_an_1.main.ui.QLKhachHang"
+        android:label="@string/menu_qlthanhvien"
+        tools:layout="@layout/fragment_q_l_khach_hang" />
+
+    <fragment
+        android:id="@+id/nav_top"
+        android:name="com.example.du_an_1.main.ui.Top"
+        android:label="@string/menu_top"
+        tools:layout="@layout/fragment_top" />
+
+    <fragment
+        android:id="@+id/nav_doanhthu"
+        android:name="com.example.du_an_1.main.ui.DoanhThu"
+        android:label="@string/menu_doanhthu"
+        tools:layout="@layout/fragment_doanh_thu" />
+
+    <fragment
+        android:id="@+id/nav_them"
+        android:name="com.example.du_an_1.main.ui.Them"
+        android:label="@string/menu_themnguoidung"
+        tools:layout="@layout/fragment_them" />
+
+    <fragment
+        android:id="@+id/nav_matkhau"
+        android:name="com.example."
+        android:label="@string/menu_matkhau"
+        tools:layout="@layout/fragment_mat_khau" />
+
+    <fragment
+        android:id="@+id/nav_dangxuat"
+        android:name="com.example.du_an_1.main.ui.DangXuat"
+        android:label="@string/menu_dangxuat"
+        tools:layout="@layout/fragment_dang_xuat" />
+</navigation>
