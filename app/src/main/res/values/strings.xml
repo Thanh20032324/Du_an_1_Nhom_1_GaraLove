@@ -1,5 +1,5 @@
 <resources>
-
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
 
     <string name="menu_qlphieumuon">Quản lý phiếu mượn</string>
     <string name="menu_qlloaisach">Quản lý loại sách</string>
@@ -13,5 +13,6 @@
     <string name="app_name">Du_an_1</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_title">Android Studio</string>
 </resources>
