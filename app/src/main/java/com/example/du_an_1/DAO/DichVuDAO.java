@@ -46,7 +46,7 @@ public class DichVuDAO {
         while (c.moveToNext()){
             DichVu dv = new DichVu();
             dv.maDV = Integer.parseInt(c.getString(c.getColumnIndex("maDV")));
-            dv.tenDV = c.getString(c.getColumnIndex("tenDV"));
+            dv.tenDV = Integer.parseInt(c.getString(c.getColumnIndex("tenDV")));
             list.add(dv);
         }
         return list;
