@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/drawable_kobogoc.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_ock.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable/custom_input.xml" value="0.1" />
+        <entry key="..\:/Du_an_1/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.129" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/activity_login.xml" value="0.136" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -23,6 +25,7 @@
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_q_l_san_pham.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_them.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_top.xml" value="0.1" />
+        <entry key="..\:/Du_an_1/app/src/main/res/layout/item_lv_addnv.xml" value="0.2" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/nav_header_maingiaodien.xml" value="0.264" />
         <entry key="..\:/Du_an_1/app/src/main/res/menu/activity_main_drawer.xml" value="0.264" />
         <entry key="..\:/Du_an_1/app/src/main/res/menu/maingiaodien.xml" value="0.1" />
