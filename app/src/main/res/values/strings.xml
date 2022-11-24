@@ -1,13 +1,13 @@
 <resources>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
 
-    <string name="menu_qlphieumuon">Quản lý phiếu mượn</string>
-    <string name="menu_qlloaisach">Quản lý loại sách</string>
-    <string name="menu_qlsach">Quản lý sách</string>
-    <string name="menu_qlthanhvien">Quản lý thanh viên</string>
+    <string name="menu_qlphieumuon">Quản lý hóa đơn</string>
+    <string name="menu_qlloaisach">Quản lý dịch vụ</string>
+    <string name="menu_qlsach">Quản lý sản phẩm</string>
+    <string name="menu_qlthanhvien">Quản lý khách hàng</string>
     <string name="menu_top">Top sách mượn nhiều nhất</string>
     <string name="menu_doanhthu">Doanh thu</string>
-    <string name="menu_themnguoidung">Thêm người dùng</string>
+    <string name="menu_themnguoidung">Thêm nhân viên</string>
     <string name="menu_matkhau">Đổi mật khẩu</string>
     <string name="menu_dangxuat">Đăng xuất</string>
     <string name="app_name">Du_an_1</string>

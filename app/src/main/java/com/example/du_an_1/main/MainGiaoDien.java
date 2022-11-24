@@ -7,9 +7,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ListView;
@@ -36,35 +38,35 @@ NhanVienDAO nhanVienDAO;
 List<NhanVien> nhanVienList;
 
 DichVuDAO dichVuDAO;
-AdapterDichVu adapterDichVu;
+AdapterDichVu  adapterDichVu;
 List<DichVu> vuList;
 ListView listView;
-
-
-
 private AppBarConfiguration mAppBarConfiguration;
 private ActivityMainGiaoDienBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().
+                setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         vuList = new ArrayList<>();
         dichVuDAO = new DichVuDAO(getApplicationContext());
         vuList = dichVuDAO.getAll();
         adapterDichVu = new AdapterDichVu(getApplicationContext(),R.layout.item_lv_addnv,vuList);
-        binding = ActivityMainGiaoDienBinding.inflate(
-                getLayoutInflater());
+
+        binding = ActivityMainGiaoDienBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarMaingiaodien.toolbar);
 
         nhanVien = new NhanVien();
         nhanVienDAO = new NhanVienDAO(getApplicationContext());
         nhanVienList = new ArrayList<>();
-
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_qlphieuthu, R.id.nav_qlloaisach,R.id.nav_quanlysach,
+                R.id.nav_qlphieuthu,
+                R.id.nav_qlloaisach,
+                R.id.nav_quanlysach,
                 R.id.nav_qlthanhvien,
                 R.id.nav_top,
                 R.id.nav_doanhthu,
@@ -73,7 +75,7 @@ private ActivityMainGiaoDienBinding binding;
                 R.id.nav_dangxuat).setOpenableLayout(drawer).build();
         NavController navController = Navigation.findNavController(this,
                 R.id.nav_host_fragment_content_maingiaodien);
-        NavigationUI.setupActionBarWithNavController(this,navController,mAppBarConfiguration);
+        NavigationUI.setupActionBarWithNavController(this,navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView,navController);
         view = navigationView.getHeaderView(0);
         nameuser = view.findViewById(R.id.login_nameuser);
@@ -83,7 +85,7 @@ private ActivityMainGiaoDienBinding binding;
         if(user.equalsIgnoreCase("admin")){
             navigationView.getMenu().findItem(R.id.nav_them).setVisible(true);
         }
-        for (int i = 0; i<nhanVienList.size();i++){
+        for (int i = 0; i < nhanVienList.size(); i++){
             if(nhanVienList.get(i).maNV.equals(user)){
                 nameuser.setText("Xin Chào"+nhanVienList.get(i).hoTen);
                 return;
@@ -94,6 +96,6 @@ private ActivityMainGiaoDienBinding binding;
     public boolean onSupportNavigateUp(){
         NavController navController = Navigation.findNavController(this,
                 R.id.nav_host_fragment_content_maingiaodien);
-        return NavigationUI.navigateUp(navController,mAppBarConfiguration) || super.onSupportNavigateUp();
+        return NavigationUI.navigateUp(navController,mAppBarConfiguration)|| super.onSupportNavigateUp();
     }
 }

@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
-    static final String dbName="GARA";
+    static final String dbName="GARALOVE";
     static final int dbVersion=1;
 
     public DbHelper( Context context) {
@@ -34,7 +34,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
      String createTableDichVu="create table DichVu(" +
              "maDV INTEGER PRIMARY KEY AUTOINCREMENT, " +
-             "tenDichVu text NOT NULL)";
+             "tenDV text NOT NULL)";
      db.execSQL(createTableDichVu);
 
      String createTableSanPham="create table SanPham(" +

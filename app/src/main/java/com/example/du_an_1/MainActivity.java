@@ -18,85 +18,93 @@ import com.example.du_an_1.main.MainGiaoDien;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
-EditText edusername,edpass;
-Button login;
-CheckBox cb;
-NhanVienDAO dao;
-String strUser,strPass;
-TextInputLayout tillpass,tilluser;
-int temp=0;
+    EditText edusername,edpassword;
+    Button login;
+    CheckBox cb;
+    NhanVienDAO dao;
+    String strUser,strPass;
+
+    TextInputLayout tilpass,tiluser;
+    int temp=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
-        setTitle("Đăng Nhập");
-        tillpass = findViewById(R.id.login_tilpassword);
-        tilluser = findViewById(R.id.login_tilusername);
+        this.getWindow().setFlags(WindowManager.LayoutParams.
+                FLAG_FULLSCREEN, WindowManager.LayoutParams.
+                FLAG_FULLSCREEN);
 
-        edpass = findViewById(R.id.login_edpassword);
+        setContentView(R.layout.activity_main);
+
+        setTitle("Đăng Nhập");
+
+        tilpass = findViewById(R.id.login_tilpassword);
+        tiluser = findViewById(R.id.login_tilusername);
+
         edusername = findViewById(R.id.login_edusername);
-        cb =findViewById(R.id.login_checkBox);
+        edpassword = findViewById(R.id.login_edpassword);
+        cb = findViewById(R.id.login_checkBox);
         login = findViewById(R.id.login_btnlogin);
 
         dao = new NhanVienDAO(this);
 //        dao.insertadmin();
         SharedPreferences pref = getSharedPreferences("USER_FILE",MODE_PRIVATE);
         edusername.setText(pref.getString("USERNAME",""));
-        edpass.setText(pref.getString("PASSWORD",""));
-        cb.setChecked(pref.getBoolean("REMEMBER", false));
+        edpassword.setText(pref.getString("PASSWORD",""));
+        cb.setChecked(pref.getBoolean("REMEMBER",false));
 
-       login.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               checkLogin();
-           }
-       });
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkLogin();
+            }
+        });
     }
 
-    private void checkLogin() {
+
+    public void checkLogin(){
         strUser = edusername.getText().toString();
-        strPass = edpass.getText().toString();
+        strPass = edpassword.getText().toString();
         if (strUser.isEmpty()){
-            tilluser.setError("Tên đăng nhập không được bỏ trống");
+            tiluser.setError("Tên đăng nhập không được để trống");
             temp++;
         }else{
-            tilluser.setError("");
+            tiluser.setError("");
         }
         if(strPass.isEmpty()){
-            tillpass.setError("Mật khẩu không được bỏ trống");
+            tilpass.setError("Tên đăng nhập không được để trống");
             temp++;
-        }else {
-            tillpass.setError("");
+        }else{
+            tilpass.setError("");
         }
         if(temp==0){
-            if(dao.checkLogin(strUser,strPass)>0){
-                tilluser.setError("");
-                tillpass.setError("");
-                Toast.makeText(this, "Login thành công",
-                        Toast.LENGTH_SHORT).show();
+            if (dao.checkLogin(strUser,strPass)>0){
+                tiluser.setError("");
+                tilpass.setError("");
+                Toast.makeText(this, "Login thành công", Toast.LENGTH_SHORT).show();
                 rememberUser(strUser,strPass,cb.isChecked());
-                Intent intent = new Intent(MainActivity.this, MainGiaoDien.class);
+
+                Intent intent = new Intent(MainActivity.this,MainGiaoDien.class);
                 intent.putExtra("user",strUser);
                 intent.putExtra("pass",strPass);
                 startActivity(intent);
                 finish();
-            }else {
-                tilluser.setError("Tên đăng nhập hoặc mật khẩu không đúng");
-                tillpass.setError("Tên đăng nhập hoặc mật khẩu không đúng");
+            }else{
+                tiluser.setError
+                        ("Tên đăng nhập hoặc mật khẩu không đúng");
+                tilpass.setError
+                        ("Tên đăng nhập hoặc mật khẩu không đúng");
             }
-            }
-        else {
+        }else{
             temp=0;
         }
     }
 
-    private void rememberUser(String u, String p, boolean status) {
+    public void rememberUser(String u, String p, boolean status){
         SharedPreferences pref = getSharedPreferences("USER_FILE",MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        if(!status){
+        if (!status){
             editor.clear();
         }else {
             editor.putString("USERNAME",u);
@@ -105,4 +113,5 @@ int temp=0;
         }
         editor.commit();
     }
+
 }
