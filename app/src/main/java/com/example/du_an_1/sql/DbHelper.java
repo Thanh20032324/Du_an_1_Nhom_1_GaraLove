@@ -29,7 +29,9 @@ public class DbHelper extends SQLiteOpenHelper {
                "soDienThoai INTEGER NOT NULL," +
                "diaChi text NOT NULL, " +
                "loaiXe text NOT NULL)";
+
        db.execSQL(createTableKhachHang);
+
      String createTableDichVu="create table DichVu(" +
              "maDV INTEGER PRIMARY KEY AUTOINCREMENT, " +
              "tenDichVu text NOT NULL)";

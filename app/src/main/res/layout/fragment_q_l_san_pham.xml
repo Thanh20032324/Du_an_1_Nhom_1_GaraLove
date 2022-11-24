@@ -8,7 +8,7 @@
     tools:context=".main.ui.QLSanPham">
 
      <ListView
-    android:id="@+id/sach_listview"
+    android:id="@+id/lv_SanPham"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:divider="@android:color/transparent"
@@ -16,7 +16,7 @@
     />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/sach_fab"
+        android:id="@+id/fab_sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
