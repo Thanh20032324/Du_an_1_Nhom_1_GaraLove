@@ -3,10 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/DuAn_1/app/src/main/res/layout/dialog_san_pham.xml" value="0.25" />
-        <entry key="..\:/DuAn_1/app/src/main/res/layout/dich_vu_item_spinner.xml" value="0.1" />
-        <entry key="..\:/DuAn_1/app/src/main/res/layout/item_lv_addnv.xml" value="0.5" />
-        <entry key="..\:/DuAn_1/app/src/main/res/layout/san_pham_item_spinner.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/drawable_kobogoc.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_ock.xml" value="0.1" />
@@ -30,7 +26,7 @@
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_them.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_top.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/item_lv_addnv.xml" value="0.2" />
-        <entry key="..\:/Du_an_1/app/src/main/res/layout/nav_header_maingiaodien.xml" value="0.12" />
+        <entry key="..\:/Du_an_1/app/src/main/res/layout/nav_header_maingiaodien.xml" value="0.264" />
         <entry key="..\:/Du_an_1/app/src/main/res/menu/activity_main_drawer.xml" value="0.264" />
         <entry key="..\:/Du_an_1/app/src/main/res/menu/maingiaodien.xml" value="0.1" />
         <entry key="..\:/Users/HP/Documents/Du_an_1_Nhom_1_GaraLove/app/src/main/res/layout/activity_main_man_hinh_chao.xml" value="0.20416666666666666" />

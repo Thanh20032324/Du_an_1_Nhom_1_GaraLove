@@ -41,7 +41,7 @@ public class AdapterDichVu extends ArrayAdapter<DichVu> {
             convertView = inflater.inflate(R.layout.item_lv_addnv,null);
             holder.tvmanv = (TextView)convertView.findViewById(R.id.item_lv_username);
             holder.tvtennv = (TextView)convertView.findViewById(R.id.item_lv_name);
-            holder.tvnamsinhnv = (TextView)convertView.findViewById(R.id.item_lv_pass);
+
 
             holder.temp1 = (TextView)convertView.findViewById(R.id.temp_1);
             holder.temp2 = (TextView)convertView.findViewById(R.id.temp_2);
@@ -69,6 +69,6 @@ public class AdapterDichVu extends ArrayAdapter<DichVu> {
 //        }
 //    }
     public class ViewHolder{
-          TextView tvmanv,tvtennv,tvnamsinhnv,temp1,temp2;
+          TextView tvmanv,tvtennv,temp1,temp2;
     }
 }
