@@ -63,13 +63,13 @@ public class QLSanPham extends Fragment {
 
         lv_sp = view.findViewById(R.id.lv_SanPham);
         dao = new SanPhamDAO(getContext());
-        updateLV();
+
 
         fabSP = view.findViewById(R.id.fab_sp);
         fabSP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openDialog(getActivity(),0);
             }
         });
 
@@ -78,11 +78,11 @@ public class QLSanPham extends Fragment {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 sanPham = new SanPham();
                 sanPham = list.get(position);
-
+                openDialog(getActivity(),1);
                 return false;
             }
         });
-
+        updateLV();
         return view;
     }
 
