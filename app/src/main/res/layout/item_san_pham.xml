@@ -6,11 +6,13 @@
     android:background="@color/e4fde1">
 
     <LinearLayout
-        android:layout_margin="10dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="3">
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,7 +21,8 @@
             android:textSize="20sp"
             android:text="ten"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+         />
+
 
         <TextView
             android:layout_width="match_parent"
@@ -35,9 +38,7 @@
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:text="17"
-
             android:layout_marginTop="10dp"
-
             android:id="@+id/tvTonKho"/>
         <TextView
             android:layout_width="match_parent"
@@ -54,14 +55,16 @@
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:id="@+id/tvDichVu"/>
-    </LinearLayout>
 
+    </LinearLayout>
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_weight="3"
+
+        android:layout_weight="2"
+
         android:src="@drawable/ic_delete"
         android:id="@+id/ivDeleteSP"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="20dp"/>
 </LinearLayout>
