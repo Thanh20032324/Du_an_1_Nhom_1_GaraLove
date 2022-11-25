@@ -22,7 +22,7 @@ public class SanPhamDAO {
 
     public long insert(SanPham sp){
         ContentValues values = new ContentValues();
-        values.put("maSP",sp.maSP);
+
         values.put("tenSP",sp.tenSP);
         values.put("soLuong",sp.soLuong);
         values.put("tonKho",sp.tonKho);
@@ -33,7 +33,7 @@ public class SanPhamDAO {
 
     public long updateSP(SanPham sp){
         ContentValues values = new ContentValues();
-        values.put("maSP",sp.maSP);
+
         values.put("tenSP",sp.tenSP);
         values.put("soLuong",sp.soLuong);
         values.put("tonKho",sp.tonKho);
