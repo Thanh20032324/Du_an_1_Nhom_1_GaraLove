@@ -14,8 +14,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.du_an_1.DAO.DichVuDAO;
 import com.example.du_an_1.R;
 import com.example.du_an_1.main.ui.QLSanPham;
+import com.example.du_an_1.model.DichVu;
 import com.example.du_an_1.model.SanPham;
 
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
     QLSanPham fraSanPham;
     List<SanPham> list;
 
-    TextView tvTenSP,tvSoLuong,tvTonKho,tvGiaTien;
+    TextView tvTenSP,tvSoLuong,tvTonKho,tvGiaTien,tvDichVu;
     ImageView ivDelete;
 
     public SanPhamAdapter(@NonNull Context context, QLSanPham fraSanPham, @NonNull List<SanPham> list) {
@@ -52,16 +54,24 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
 
         if(item!=null){
             tvTenSP = view.findViewById(R.id.tvTenSP);
-            tvTenSP.setText(item.getTenSP());
+            tvTenSP.setText("Tên sản phẩm: "+item.getTenSP());
 
             tvSoLuong = view.findViewById(R.id.tvSoLuong);
-            tvSoLuong.setText(item.getSoLuong());
+            tvSoLuong.setText("Số lượng: "+item.getSoLuong());
 
             tvTonKho = view.findViewById(R.id.tvTonKho);
-            tvTonKho.setText(item.getTonKho());
+            tvTonKho.setText("Tồn kho: "+item.getTonKho());
 
             tvGiaTien = view.findViewById(R.id.tvGiaTien);
-            tvGiaTien.setText(item.getGiaSP()+" .VND");
+            tvGiaTien.setText("Giá tiền: "+item.getGiaSP()+" .VND");
+
+
+            DichVu dichVu= new DichVu();
+            DichVuDAO DVdao = new DichVuDAO(getContext());
+            dichVu = DVdao.getID(String.valueOf(item.getMaDV()));
+
+            tvDichVu= view.findViewById(R.id.tvDichVu);
+            tvDichVu.setText("Tên dịch vụ: "+dichVu.tenDV);
 
             ivDelete = view.findViewById(R.id.ivDeleteSP);
 
@@ -78,3 +88,4 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
         return view;
     }
 }
+

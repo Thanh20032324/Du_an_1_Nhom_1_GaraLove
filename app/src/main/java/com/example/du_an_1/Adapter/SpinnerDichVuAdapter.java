@@ -44,4 +44,21 @@ public class SpinnerDichVuAdapter extends ArrayAdapter<DichVu> {
 
         return view;
     }
+
+    @Override
+    public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        View view = convertView;
+        if(view==null){
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.dich_vu_item_spinner,null);
+
+        }
+        final DichVu dichVu = list.get(position);
+        if(dichVu!=null){
+            tvTenDV = view.findViewById(R.id.tvTenDVSP);
+            tvTenDV.setText(dichVu.tenDV);
+        }
+
+        return view;
+    }
 }
