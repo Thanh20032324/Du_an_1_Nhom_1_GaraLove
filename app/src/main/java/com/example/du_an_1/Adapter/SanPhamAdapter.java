@@ -14,13 +14,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.du_an_1.DAO.DichVuDAO;
+
 import com.example.du_an_1.R;
 import com.example.du_an_1.main.ui.QLSanPham;
-import com.example.du_an_1.model.DichVu;
 import com.example.du_an_1.model.SanPham;
-
-import java.util.ArrayList;
 
 import java.util.List;
 import java.util.zip.Inflater;
@@ -31,7 +28,8 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
     QLSanPham fraSanPham;
     List<SanPham> list;
 
-    TextView tvTenSP,tvSoLuong,tvTonKho,tvGiaTien,tvDichVu;
+
+    TextView tvTenSP,tvSoLuong,tvTonKho,tvGiaTien;
     ImageView ivDelete;
 
     public SanPhamAdapter(@NonNull Context context, QLSanPham fraSanPham, @NonNull List<SanPham> list) {
@@ -64,14 +62,8 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
             tvTonKho.setText(item.getTonKho());
 
             tvGiaTien = view.findViewById(R.id.tvGiaTien);
-            tvGiaTien.setText(item.getGiaSP()+" .VND");
 
-            DichVu dichVu= new DichVu();
-            DichVuDAO DVdao = new DichVuDAO(getContext());
-            dichVu = DVdao.getID(String.valueOf(item.getMaDV()));
-
-            tvDichVu= view.findViewById(R.id.tvDichVu);
-            tvDichVu.setText(dichVu.tenDV);
+            tvTenSP.setText(item.getGiaSP()+" .VND");
 
             ivDelete = view.findViewById(R.id.ivDeleteSP);
 
