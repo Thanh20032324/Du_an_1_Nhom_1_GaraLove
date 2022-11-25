@@ -72,6 +72,7 @@ public class QLSanPham extends Fragment {
             @Override
             public void onClick(View v) {
                 openDialog(getActivity(),0);
+                updateLV();
                 Log.d("loi","sá");
             }
         });

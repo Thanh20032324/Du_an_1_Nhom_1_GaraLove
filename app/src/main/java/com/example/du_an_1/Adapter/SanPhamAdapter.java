@@ -55,17 +55,18 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
 
         if(item!=null){
             tvTenSP = view.findViewById(R.id.tvTenSP);
-            tvTenSP.setText(item.getTenSP());
+            tvTenSP.setText("Tên sản phẩm: "+item.getTenSP());
 
             tvSoLuong = view.findViewById(R.id.tvSoLuong);
-            tvSoLuong.setText(item.getSoLuong());
+            tvSoLuong.setText("Số lượng: "+item.getSoLuong());
 
             tvTonKho = view.findViewById(R.id.tvTonKho);
-            tvTonKho.setText(item.getTonKho());
+            tvTonKho.setText("Tồn kho: "+item.getTonKho());
 
             tvGiaTien = view.findViewById(R.id.tvGiaTien);
 
-            tvTenSP.setText(item.getGiaSP()+" .VND");
+            tvGiaTien.setText("Giá tiền: "+item.getGiaSP()+" .VND");
+
 
 
             DichVu dichVu= new DichVu();
@@ -73,7 +74,9 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
             dichVu = DVdao.getID(String.valueOf(item.getMaDV()));
 
             tvDichVu= view.findViewById(R.id.tvDichVu);
-            tvDichVu.setText(dichVu.tenDV);
+
+            tvDichVu.setText("Tên dịch vụ: "+dichVu.tenDV);
+
 
             ivDelete = view.findViewById(R.id.ivDeleteSP);
 

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.hardware.lights.LightsManager;
+import android.util.Log;
 
 import com.example.du_an_1.model.SanPham;
 import com.example.du_an_1.sql.DbHelper;
@@ -28,6 +29,7 @@ public class SanPhamDAO {
         values.put("tonKho",sp.tonKho);
         values.put("giaSP",sp.giaSP);
         values.put("maDV",sp.maDV);
+        Log.d("SP",sp.toString());
         return db.insert("SanPham",null,values);
     }
 
