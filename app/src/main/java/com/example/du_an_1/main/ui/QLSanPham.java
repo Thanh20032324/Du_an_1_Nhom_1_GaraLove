@@ -49,6 +49,7 @@ public class QLSanPham extends Fragment {
     SanPhamDAO dao;
     SanPhamAdapter adapter;
     SanPham sanPham;
+    
 
     EditText edTenSP, edSoLuong, edTonKho, edGiaSP,edMaSP;
     Spinner spnDV;
@@ -65,7 +66,6 @@ public class QLSanPham extends Fragment {
 
         lv_sp = view.findViewById(R.id.lv_SanPham);
         dao = new SanPhamDAO(getContext());
-
 
         fabSP = view.findViewById(R.id.fab_sp);
         fabSP.setOnClickListener(new View.OnClickListener() {
@@ -85,11 +85,12 @@ public class QLSanPham extends Fragment {
                 return false;
             }
         });
-        updateLV();
+        //updateLV();
         return view;
     }
 
     void updateLV(){
+        list = new ArrayList<SanPham>();
         list = (List<SanPham>) dao.getAll();
         adapter = new SanPhamAdapter(getActivity(),this,list);
         lv_sp.setAdapter(adapter);
