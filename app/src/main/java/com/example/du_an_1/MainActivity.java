@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.login_btnlogin);
 
         dao = new NhanVienDAO(this);
-//        dao.insertadmin();
+        dao.insertadmin();
         SharedPreferences pref = getSharedPreferences("USER_FILE",MODE_PRIVATE);
         edusername.setText(pref.getString("USERNAME",""));
         edpassword.setText(pref.getString("PASSWORD",""));

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+
 import com.example.du_an_1.R;
 import com.example.du_an_1.main.ui.QLSanPham;
 import com.example.du_an_1.model.SanPham;
@@ -27,8 +28,10 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
     QLSanPham fraSanPham;
     List<SanPham> list;
 
+
     TextView tvTenSP,tvSoLuong,tvTonKho,tvGiaTien;
     ImageView ivDelete;
+
     public SanPhamAdapter(@NonNull Context context, QLSanPham fraSanPham, @NonNull List<SanPham> list) {
         super(context, 0, list);
         this.context=context;
@@ -59,6 +62,7 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
             tvTonKho.setText(item.getTonKho());
 
             tvGiaTien = view.findViewById(R.id.tvGiaTien);
+
             tvTenSP.setText(item.getGiaSP()+" .VND");
 
             ivDelete = view.findViewById(R.id.ivDeleteSP);
