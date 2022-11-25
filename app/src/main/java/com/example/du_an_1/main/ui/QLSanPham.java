@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +45,7 @@ public class QLSanPham extends Fragment {
     DichVuDAO  DVdao;
     List<DichVu> listDV;
 
+
     SanPhamDAO dao;
     SanPhamAdapter adapter;
     SanPham sanPham;
@@ -70,6 +72,7 @@ public class QLSanPham extends Fragment {
             @Override
             public void onClick(View v) {
                 openDialog(getActivity(),0);
+                Log.d("loi","sá");
             }
         });
 
@@ -129,13 +132,13 @@ public class QLSanPham extends Fragment {
         edMaSP = dialog.findViewById(R.id.edMaSP);
         edTenSP  =dialog.findViewById(R.id.edTenSP);
         edSoLuong = dialog.findViewById(R.id.edSoLuong);
+        edGiaSP = dialog.findViewById(R.id.edGiaSp);
         edTonKho = dialog.findViewById(R.id.edTonKho);
         spnDV =dialog.findViewById(R.id.spnDV);
         btnSave = dialog.findViewById(R.id.btnSaveSP);
         btnCancle = dialog.findViewById(R.id.btnCancleSP);
 
         edMaSP.setEnabled(false);
-
 
         DVdao = new DichVuDAO(context);
         listDV = new ArrayList<DichVu>();
@@ -207,6 +210,7 @@ public class QLSanPham extends Fragment {
                 }
             }
         });
+        dialog.show();
     }
     public int validate(){
         int check =1;
