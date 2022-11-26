@@ -53,8 +53,8 @@ public class AdapterDichVu extends ArrayAdapter<DichVu> {
         holder.tvmanv.setText(String.valueOf(dv.maDV));
         holder.tvtennv.setText(dv.tenDV);
 
-        holder.temp1.setText("Mã Dịch Vụ");
-        holder.temp2.setText("Tên Dịch Vụ");
+        holder.temp1.setText("Mã Dịch Vụ: ");
+        holder.temp2.setText("Tên Dịch Vụ: ");
         return convertView;
     }
 //    public void filter(String charText){

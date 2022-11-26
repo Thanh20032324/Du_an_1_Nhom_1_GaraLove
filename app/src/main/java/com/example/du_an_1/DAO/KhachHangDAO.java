@@ -23,23 +23,23 @@ public class KhachHangDAO {
 
     public long insertKH(KhachHang kh){
         ContentValues values = new ContentValues();
-        values.put("hoTen",kh.getTenKH());
-        values.put("gioiTinh",kh.getGioiTinh());
-        values.put("soDienThoai",kh.getSdt());
-        values.put("diaChi",kh.getDiachi());
-        values.put("loaiXe",kh.getLoaixe());
+        values.put("hoTen",kh.tenKH);
+        values.put("gioiTinh",kh.gioiTinh);
+        values.put("soDienThoai",kh.sdt);
+        values.put("diaChi",kh.diachi);
+        values.put("loaiXe",kh.loaixe);
         Log.d("XXXXX",kh.toString());
         return db.insert("KhachHang",null,values);
     }
 
     public long update(KhachHang kh){
         ContentValues values = new ContentValues();
-        values.put("hoTen",kh.getTenKH());
-        values.put("gioiTinh",kh.getGioiTinh());
-        values.put("soDienThoai",kh.getSdt());
-        values.put("diaChi",kh.getDiachi());
-        values.put("loaiXe",kh.getLoaixe());
-        return db.update("KhachHang",values,"maKH=?", new String[]{String.valueOf(kh.getMaKH())});
+        values.put("hoTen",kh.tenKH);
+        values.put("gioiTinh",kh.gioiTinh);
+        values.put("soDienThoai",kh.sdt);
+        values.put("diaChi",kh.diachi);
+        values.put("loaiXe",kh.loaixe);
+        return db.update("KhachHang",values,"maKH=?", new String[]{String.valueOf(kh.maKH)});
     }
     public int delete(String id){
         return db.delete("KhachHang","maKH=?",new String[]{id});
@@ -51,12 +51,12 @@ public class KhachHangDAO {
         Cursor c = db.rawQuery(sql,selectionArgs);
         while (c.moveToNext()){
             KhachHang khachHang = new KhachHang();
-            khachHang.setMaKH(Integer.parseInt(c.getString(c.getColumnIndex("maKH"))));
-            khachHang.setTenKH(c.getString(c.getColumnIndex("hoTen")));
-            khachHang.setGioiTinh(c.getString(c.getColumnIndex("gioiTinh")));
-            khachHang.setSdt(c.getString(c.getColumnIndex("soDienThoai")));
-            khachHang.setDiachi(c.getString(c.getColumnIndex("diaChi")));
-            khachHang.setLoaixe(c.getString(c.getColumnIndex("loaiXe")));
+           khachHang.maKH = Integer.parseInt(c.getString(0));
+           khachHang.tenKH = c.getString(1);
+           khachHang.gioiTinh = c.getString(2);
+           khachHang.sdt = c.getString(3);
+           khachHang.diachi = c.getString(4);
+            khachHang.loaixe = c.getString(5);
             list.add(khachHang);
         }
         return list;
@@ -65,5 +65,10 @@ public class KhachHangDAO {
     public List<KhachHang> getAll(){
         String sql = "SELECT * FROM KhachHang";
         return getData(sql);
+    }
+    public KhachHang getID(String id){
+        String sql = "SELECT * FROM KhachHang WHERE maKH=?";
+        List<KhachHang> list = getData(sql, id);
+        return list.get(0);
     }
 }
