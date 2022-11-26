@@ -63,4 +63,6 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-
+        android:id="@+id/ivDeleteSP"
+        android:src="@drawable/ic_delete"/>
+</LinearLayout>
