@@ -27,7 +27,7 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/item_lv_username"
+                android:id="@+id/tvMaNV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Mã Nhân Viên"
@@ -47,7 +47,7 @@
                 android:textSize="18sp"
                 android:id="@+id/temp_2"/>
             <TextView
-                android:id="@+id/item_lv_name"
+                android:id="@+id/tvTenNV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tên Nhân Viên"

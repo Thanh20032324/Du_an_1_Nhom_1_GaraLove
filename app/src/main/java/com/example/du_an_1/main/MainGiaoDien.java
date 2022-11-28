@@ -82,8 +82,12 @@ private ActivityMainGiaoDienBinding binding;
         Intent intent = getIntent();
         String user = intent.getStringExtra("user");
         nhanVienList = nhanVienDAO.getAll();
+
         if(user.equalsIgnoreCase("admin")){
             navigationView.getMenu().findItem(R.id.nav_them).setVisible(true);
+        }else{
+            navigationView.getMenu().findItem(R.id.nav_them).setVisible(false);
+
         }
         for (int i = 0; i < nhanVienList.size(); i++){
             if(nhanVienList.get(i).maNV.equals(user)){

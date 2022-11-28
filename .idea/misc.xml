@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DuAn_1/app/src/main/res/layout/conten_maingiaodien.xml" value="0.20416666666666666" />
+        <entry key="..\:/DuAn_1/app/src/main/res/layout/dialog_themkhachhang.xml" value="0.33" />
+        <entry key="..\:/DuAn_1/app/src/main/res/layout/dialog_themnv.xml" value="0.33" />
+        <entry key="..\:/DuAn_1/app/src/main/res/layout/fragment_q_l_khach_hang.xml" value="0.20416666666666666" />
+        <entry key="..\:/DuAn_1/app/src/main/res/layout/fragment_them.xml" value="0.20416666666666666" />
         <entry key="..\:/DuAn_1/app/src/main/res/layout/item_lv_addkh.xml" value="0.33" />
+        <entry key="..\:/DuAn_1/app/src/main/res/layout/item_lv_addnv.xml" value="0.26666666666666666" />
         <entry key="..\:/DuAn_1/app/src/main/res/layout/item_san_pham.xml" value="0.25" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_ock.xml" value="0.1" />

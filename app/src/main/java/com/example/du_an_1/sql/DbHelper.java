@@ -17,7 +17,8 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
        String createTableNhanVien="create table NhanVien(" +
-               "maNV text PRIMARY KEY, " +
+               "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+               "maNV text NOT NULL, " +
                "hoTen text NOT NULL," +
                "matKhau text NOT NULL)";
        db.execSQL(createTableNhanVien);
