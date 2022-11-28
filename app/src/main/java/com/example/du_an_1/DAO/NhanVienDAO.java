@@ -37,10 +37,10 @@ public class NhanVienDAO {
         values.put("maNV",odj.maNV);
         values.put("hoTen",odj.hoTen);
         values.put("matKhau",odj.matKhau);
-        return db.update("NhanVien",values,"maNV=?", new String[]{String.valueOf(odj.maNV)});
+        return db.update("NhanVien",values,"id=?", new String[]{String.valueOf(odj.maNV)});
     }
     public int delete(String id){
-        return db.delete("NhanVien","maNV=?",new String[]{id});
+        return db.delete("NhanVien","id=?",new String[]{id});
     }
     public List<NhanVien> getAll(){
         String sql = "SELECT * FROM NhanVien";
@@ -53,6 +53,7 @@ public class NhanVienDAO {
         Cursor c = db.rawQuery(sql,selecttionArgs);
         while (c.moveToNext()){
             NhanVien obj = new NhanVien();
+            obj.id = Integer.parseInt(c.getString(c.getColumnIndex("id")));
             obj.maNV = c.getString(c.getColumnIndex("maNV"));
             obj.hoTen = c.getString(c.getColumnIndex("hoTen"));
             obj.matKhau = c.getString(c.getColumnIndex("matKhau"));
@@ -69,7 +70,7 @@ public class NhanVienDAO {
         return 1;
     }
      public NhanVien getID(String id){
-        String sql ="SELECT * FROM NhanVien WHERE maNV=?";
+        String sql ="SELECT * FROM NhanVien WHERE id=?";
         List<NhanVien> list = getData(sql,id);
         return list.get(0);
      }

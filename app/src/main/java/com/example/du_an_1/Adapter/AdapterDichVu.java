@@ -39,8 +39,8 @@ public class AdapterDichVu extends ArrayAdapter<DichVu> {
         ViewHolder holder = new ViewHolder();
         if(convertView==null){
             convertView = inflater.inflate(R.layout.item_lv_addnv,null);
-            holder.tvmanv = (TextView)convertView.findViewById(R.id.item_lv_username);
-            holder.tvtennv = (TextView)convertView.findViewById(R.id.item_lv_name);
+            holder.tvmanv = (TextView)convertView.findViewById(R.id.tvMaNV);
+            holder.tvtennv = (TextView)convertView.findViewById(R.id.tvTenNV);
 
 
             holder.temp1 = (TextView)convertView.findViewById(R.id.temp_1);
