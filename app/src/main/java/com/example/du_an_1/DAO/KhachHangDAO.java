@@ -55,6 +55,7 @@ public class KhachHangDAO {
            khachHang.tenKH = c.getString(1);
            khachHang.gioiTinh = c.getString(2);
            khachHang.sdt = c.getString(3);
+
            khachHang.diachi = c.getString(4);
             khachHang.loaixe = c.getString(5);
             list.add(khachHang);
