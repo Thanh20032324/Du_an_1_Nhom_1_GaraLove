@@ -3,9 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
+        <entry key="..\:/DuAn_1/app/src/main/res/layout/item_lv_addkh.xml" value="0.33" />
         <entry key="..\:/DuAn_1/app/src/main/res/layout/item_san_pham.xml" value="0.25" />
-
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_ock.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable/custom_input.xml" value="0.1" />
@@ -18,19 +17,16 @@
         <entry key="..\:/Du_an_1/app/src/main/res/layout/app_bar_maingiaodien.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/conten_maingiaodien.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/custom_input.xml" value="0.1" />
-        <entry key="..\:/Du_an_1/app/src/main/res/layout/dialog_themkh.xml" value="0.152" />
-        <entry key="..\:/Du_an_1/app/src/main/res/layout/dialog_themkhachhang.xml" value="0.2" />
-        <entry key="..\:/Du_an_1/app/src/main/res/layout/dialog_themnv.xml" value="0.2" />
+        <entry key="..\:/Du_an_1/app/src/main/res/layout/dialog_themnv.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_dang_xuat.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_doanh_thu.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_q_l_dich_vu.xml" value="0.1" />
-        <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_q_l_hoa_don.xml" value="0.264" />
+        <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_q_l_hoa_don.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_q_l_khach_hang.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_q_l_nhan_vien.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_q_l_san_pham.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_them.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_top.xml" value="0.1" />
-        <entry key="..\:/Du_an_1/app/src/main/res/layout/item_lv_addkh.xml" value="0.4" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/item_lv_addnv.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/item_san_pham.xml" value="0.11197916666666667" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/nav_header_maingiaodien.xml" value="0.264" />

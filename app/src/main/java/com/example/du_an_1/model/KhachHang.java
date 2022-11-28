@@ -18,4 +18,6 @@ public class KhachHang {
         this.diachi = diachi;
         this.loaixe = loaixe;
     }
+
+
 }
