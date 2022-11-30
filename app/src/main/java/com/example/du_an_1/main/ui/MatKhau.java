@@ -4,9 +4,7 @@ package com.example.du_an_1.main.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Shader;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -26,29 +24,33 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class MatKhau extends Fragment {
     private FragmentMatKhauBinding binding;
-    private EditText MkKu,MkMoi,NhapLaiMk;
-    private Button BtnTheem,BtnHuyr;
-    NhanVienDAO dao = new NhanVienDAO(getActivity());
+     EditText MkKu,MkMoi,NhapLaiMk;
+     Button BtnTheem,BtnHuyr;
+    NhanVienDAO dao;
     TextInputLayout tilMkKu,tilMkMoi,tilNhapLaiMk;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-//        return inflater.inflate(R.layout.fragment_mat_khau, container, false);
         binding = FragmentMatKhauBinding.inflate(inflater,container,false);
-        View rooView= binding.getRoot();
-        MkKu = rooView.findViewById(R.id.pass_oldpass);
-        MkMoi = rooView.findViewById(R.id.pass_newpass);
-        NhapLaiMk = rooView.findViewById(R.id.pass_newpasscheck);
-        BtnTheem = rooView.findViewById(R.id.pass_btnsave);
-        BtnHuyr = rooView.findViewById(R.id.pass_btncancel);
-        tilMkKu = rooView.findViewById(R.id.pass_oldpass);
-        tilMkMoi = rooView.findViewById(R.id.pass_tilnewpass);
-        tilNhapLaiMk = rooView.findViewById(R.id.pass_tilnewpasscheck);
+        View root= binding.getRoot();
+        MkKu = root.findViewById(R.id.pass_oldpass);
+        MkMoi = root.findViewById(R.id.pass_newpass);
+        NhapLaiMk = root.findViewById(R.id.pass_newpasscheck);
+
+        BtnTheem = root.findViewById(R.id.pass_btnsave);
+        BtnHuyr = root.findViewById(R.id.pass_btncancel);
+
+        tilMkKu = root.findViewById(R.id.pass_tilOldpass);
+        tilMkMoi = root.findViewById(R.id.pass_tilnewpass);
+        tilNhapLaiMk = root.findViewById(R.id.pass_tilnewpasscheck);
+
+        dao = new NhanVienDAO(getActivity());
+
         BtnTheem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences preferences = getActivity().getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
-                String user = preferences.getString("USER_NAME","");
+                String user = preferences.getString("USERNAME","");
                 if(user.length()==0){
                     Intent intent1 = getActivity().getIntent();
                     String user1 = intent1.getStringExtra("user");
@@ -61,7 +63,8 @@ public class MatKhau extends Fragment {
                     nhanVien.matKhau = MkMoi.getText().toString();
                     dao.update(nhanVien);
                 if (dao.update(nhanVien)>0){
-                    Toast.makeText(getActivity(),"Thay dổi mật khaaurthanhd cọn",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Thay dổi mật khẩu thành công",
+                            Toast.LENGTH_SHORT).show();
                     MkMoi.setText("");
                     MkKu.setText("");
                     NhapLaiMk.setText("");
@@ -88,7 +91,7 @@ public class MatKhau extends Fragment {
                 tilNhapLaiMk.setError("");
             }
         });
-        return rooView;
+        return root;
     }
 
     private int validate() {
@@ -120,7 +123,7 @@ public class MatKhau extends Fragment {
             String KtMKcu = preferences1.getString("PASSWORD", "");
             if (KtMKcu.length() == 0) {
                 Intent intent = getActivity().getIntent();
-                String pass = intent.getStringExtra("PASS");
+                String pass = intent.getStringExtra("pass");
                 KtMKcu = pass;
 
             }
@@ -133,6 +136,7 @@ public class MatKhau extends Fragment {
             }
             if (!MkNew.equals(MkNhApLaI)) {
                 tilNhapLaiMk.setError("mật khẩu không trùng khớp ");
+                check=-1;
             }
         }
         else {
@@ -141,5 +145,9 @@ public class MatKhau extends Fragment {
         }
         return check;
     }
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

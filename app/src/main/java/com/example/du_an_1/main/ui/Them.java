@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,15 +23,19 @@ import android.widget.Toast;
 
 import com.example.du_an_1.Adapter.AdapterKhachHang;
 import com.example.du_an_1.Adapter.AdapterNhanVien;
+import com.example.du_an_1.DAO.HoaDonDAO;
 import com.example.du_an_1.DAO.KhachHangDAO;
 import com.example.du_an_1.DAO.NhanVienDAO;
 import com.example.du_an_1.R;
 import com.example.du_an_1.databinding.FragmentQLKhachHangBinding;
 import com.example.du_an_1.databinding.FragmentThemBinding;
+import com.example.du_an_1.model.HoaDon;
 import com.example.du_an_1.model.KhachHang;
 import com.example.du_an_1.model.NhanVien;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Them extends Fragment {
@@ -40,24 +45,27 @@ public class Them extends Fragment {
     ListView listView;
     List<NhanVien> list;
     NhanVien nhanVien;
-
     int a;
     int temp=0;
-    EditText edMaNV,edTenNV,edMatKhau;
+    EditText edTenNV,edtendn,edMatKhau;
+    TextInputLayout  tilTenNV, tilTenDN, tilMatKhau;
     AdapterNhanVien adapterNhanVien;
-    TextView tvTitle;
+    List<HoaDon> hoaDonList;
+    HoaDonDAO hoaDonDAO;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
          binding = FragmentThemBinding.inflate(inflater,container,false);
-         View view = binding.getRoot();
+         View root = binding.getRoot();
 
-         fab = view.findViewById(R.id.add_fab);
-         listView = view.findViewById(R.id.add_listview);
+         fab = root.findViewById(R.id.add_fab);
+         listView = root.findViewById(R.id.add_listview);
 
-         dao = new NhanVienDAO(getContext());
+         hoaDonList = new ArrayList<>();
+         hoaDonDAO = new HoaDonDAO(getActivity());
+
          updateLV();
          fab.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -71,15 +79,21 @@ public class Them extends Fragment {
              @Override
              public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 a=position;
-                openDialog(Gravity.CENTER);
+                if (a!=0) {
+                    openDialog(Gravity.CENTER);
+                }else {
+                    Toast.makeText(getActivity(), "Không thể sửa admin",
+                            Toast.LENGTH_SHORT).show();
+                }
              }
          });
-        return view;
+        return root;
     }
+
     private void openDialog(int gravity){
         final Dialog dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialog_themnv);
+        dialog.setContentView(R.layout.dialog_nv);
         Window window = dialog.getWindow();
         if(window==null){
             return;
@@ -94,27 +108,36 @@ public class Them extends Fragment {
         }else{
             dialog.setCancelable(false);
         }
-        edTenNV = dialog.findViewById(R.id.item_txtname);
-        edMaNV = dialog.findViewById(R.id.item_txtnameuser);
-        edMatKhau = dialog.findViewById(R.id.item_txtpass);
-        tvTitle = dialog.findViewById(R.id.item_tvtile);
+        edtendn = dialog.findViewById(R.id.item_txttendn);
+        edTenNV = dialog.findViewById(R.id.item_txttennv);
+        edMatKhau = dialog.findViewById(R.id.item_txtpasss);
+
+        tilTenDN = dialog.findViewById(R.id.add_til_tendn);
+        tilTenNV = dialog.findViewById(R.id.add_til_tennv);
+        tilMatKhau = dialog.findViewById(R.id.add_til_passs);
 
         Button btnadd = dialog.findViewById(R.id.dialog_add_add);
         Button btncancel = dialog.findViewById(R.id.dialog_add_cancel);
 
-        dao = new NhanVienDAO(getContext());
+        dao = new NhanVienDAO(getActivity());
         if(a==-1){
             btnadd.setOnClickListener(new View.OnClickListener() {
+                NhanVien vien = new NhanVien();
                 @Override
                 public void onClick(View v) {
                     validate();
+                    for (int i = 0; i < list.size(); i++){
+                        if (list.get(i).maNV.equals(edtendn.getText().toString())){
+                            tilTenDN.setError("Tên Đăng Nhập Đã Tồn Tại");
+                            temp++;
+                            break;
+                        }
+                    }
                     if(temp==0){
-                        nhanVien = new NhanVien();
-                        nhanVien.hoTen = edTenNV.getText().toString();
-                        nhanVien.maNV = edMaNV.getText().toString();
-                        nhanVien.matKhau = edMatKhau.getText().toString();
-
-                        if(dao.insert(nhanVien)>0){
+                       vien.maNV = edtendn.getText().toString();
+                       vien.hoTen = edTenNV.getText().toString();
+                       vien.matKhau = edMatKhau.getText().toString();
+                        if(dao.insert(vien)>0){
                             Toast.makeText(getActivity(), "Thêm Thành Công",
                                     Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
@@ -136,14 +159,18 @@ public class Them extends Fragment {
                 }
             });
         }else{
-            tvTitle.setText("Sửa/Xóa nhân viên");
+            nhanVien = dao.getAll().get(a);
+            TextView tvTile = (TextView)dialog.findViewById(R.id.item_tvtile1);
+            tvTile.setText("Sửa/Xóa nhân viên");
             btnadd.setText("Sửa");
             btncancel.setText("Xóa");
 
-            nhanVien = dao.getAll().get(a);
+            edMatKhau.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            tilMatKhau.setPasswordVisibilityToggleEnabled(true);
 
+            edtendn.setText(nhanVien.maNV);
+            edtendn.setEnabled(false);
             edTenNV.setText(nhanVien.hoTen);
-            edMaNV.setText(nhanVien.maNV);
             edMatKhau.setText(nhanVien.matKhau);
 
             btnadd.setOnClickListener(new View.OnClickListener() {
@@ -152,11 +179,11 @@ public class Them extends Fragment {
                     validate();
                     if(temp==0){
                         nhanVien = new NhanVien();
+                        nhanVien.maNV = edtendn.getText().toString();
                         nhanVien.hoTen = edTenNV.getText().toString();
-                        nhanVien.maNV =edMaNV.getText().toString();
                         nhanVien.matKhau = edMatKhau.getText().toString();
 
-                        if(dao.update(nhanVien)>0){
+                        if(dao.update(nhanVien)<0){
                             Toast.makeText(getActivity(), "Sửa thất bại",
                                     Toast.LENGTH_SHORT).show();
                         }else {
@@ -173,8 +200,17 @@ public class Them extends Fragment {
             btncancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    hoaDonList = hoaDonDAO.getAll();
+                    for (int i = 0; i < hoaDonList.size(); i++){
+                        if (hoaDonList.get(i).MaNV.equals(nhanVien.maNV)){
+                            temp++;
+                            Toast.makeText(getActivity(), "Không thể xóa nhân viên có trong hóa đơn",
+                                    Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                    }
                     if (temp==0){
-                        if(dao.delete(String.valueOf(nhanVien.id))<0){
+                        if(dao.delete(String.valueOf(nhanVien.maNV))<0){
                             Toast.makeText(getActivity(), "Xóa thất bại",
                                     Toast.LENGTH_SHORT).show();
                         }else {
@@ -191,7 +227,7 @@ public class Them extends Fragment {
     }
 
     private void updateLV(){
-        dao = new NhanVienDAO(getContext());
+        dao = new NhanVienDAO(getActivity());
         list = dao.getAll();
         adapterNhanVien = new AdapterNhanVien(getActivity(),R.layout.item_lv_addnv,list);
         listView.setAdapter(adapterNhanVien);
@@ -199,25 +235,24 @@ public class Them extends Fragment {
 
     private void validate(){
         if(edTenNV.getText().length()==0){
-            edTenNV.setError("Tên nhân viên không được để trống");
+            tilTenNV.setError("Tên nhân viên không được để trống");
             temp++;
         }else{
-            edTenNV.setError("");
+            tilTenNV.setError("");
         }
 
-        if(edMaNV.getText().length()==0){
-            edMaNV.setError("Mã nhân viên không được để trống");
+        if(edtendn.getText().length()==0){
+            tilTenDN.setError("Tên đăng nhập không được để trống");
             temp++;
         }else{
-            edMaNV.setError("");
+            tilTenDN.setError("");
         }
 
         if(edMatKhau.getText().length()==0){
-            edMatKhau.setError("Mật khẩu không được để trống");
+            tilMatKhau.setError("Mật khẩu không được để trống");
             temp++;
         }else{
-            edMatKhau.setError("");
+            tilMatKhau.setError("");
         }
-
     }
 }

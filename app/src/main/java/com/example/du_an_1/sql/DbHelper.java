@@ -17,8 +17,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
        String createTableNhanVien="create table NhanVien(" +
-               "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-               "maNV text NOT NULL, " +
+               "maNV text PRIMARY KEY, " +
                "hoTen text NOT NULL," +
                "matKhau text NOT NULL)";
        db.execSQL(createTableNhanVien);
@@ -49,7 +48,7 @@ public class DbHelper extends SQLiteOpenHelper {
      String createTableHoaDon="create table HoaDon(" +
              "maHD INTEGER PRIMARY KEY AUTOINCREMENT, " +
              "maNV text REFERENCES NhanVien(maNV), " +
-             "maKH INTEGER REFERENCES KhachHang(maKH), " +
+             "maKH INTEGER REFERENCES KhachHang(maKH), "   +
              "maSP INTEGER REFERENCES SanPham(maSP), " +
              "tienSP INTEGER NOT NULL, " +
              "ngay DATE NOT NULL, " +
