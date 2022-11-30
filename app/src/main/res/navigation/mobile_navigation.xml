@@ -47,7 +47,7 @@
 
     <fragment
         android:id="@+id/nav_matkhau"
-        android:name="com.example."
+        android:name="com.example.du_an_1.main.ui.MatKhau"
         android:label="@string/menu_matkhau"
         tools:layout="@layout/fragment_mat_khau" />
 

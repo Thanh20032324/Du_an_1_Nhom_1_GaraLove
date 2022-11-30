@@ -7,7 +7,6 @@
     android:background="@drawable/drawable_kobogoc"
     android:padding="5dp"
     android:layout_marginTop="10dp">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,18 +18,10 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/temp_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mã Nhân Viên: "
-                android:textSize="14sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/tvMaNV"
+                android:id="@+id/item_lv_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mã Nhân Viên"
+                android:text="Tên Đăng Nhập: "
                 android:textColor="#FF0000"
                 android:textSize="14sp"
                 android:textStyle="italic" />
@@ -39,18 +30,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/item_lv_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tên Nhân Viên: "
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:id="@+id/temp_2"/>
-            <TextView
-                android:id="@+id/tvTenNV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tên Nhân Viên"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 />
@@ -58,42 +43,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tên đăng nhập: "
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:id="@+id/temp_3"/>
-            <TextView
-                android:id="@+id/tvtendn"
+                android:id="@+id/item_lv_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tên đăng nhập"
-                android:textSize="15sp"
+                android:text="Mật khẩu"
                 android:textStyle="bold"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mật Khẩu: "
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:id="@+id/temp_4"/>
-            <TextView
-                android:id="@+id/tvMK"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Mật Khẩu"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
+                android:textSize="12sp"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -110,8 +68,8 @@
                 android:layout_marginLeft="-15dp"
                 android:layout_marginTop="-15dp"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/img_1"/>
+                android:layout_height="80dp"/>
+<!--                android:src="@drawable/gifbook"/>-->
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
