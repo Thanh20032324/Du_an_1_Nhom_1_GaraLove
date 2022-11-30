@@ -53,6 +53,7 @@ public class DbHelper extends SQLiteOpenHelper {
              "maSP INTEGER REFERENCES SanPham(maSP), " +
              "tienSP INTEGER NOT NULL, " +
              "ngay DATE NOT NULL, " +
+             "soLuongSP INTEGER NOT NULL, " +
              "thanhToan INTEGER NOT NULL)";
      db.execSQL(createTableHoaDon);
     }
