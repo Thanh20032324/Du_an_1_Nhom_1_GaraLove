@@ -26,9 +26,11 @@ public class HoaDonDAO {
         values.put("maSP",odj.MaSP);
         values.put("tienSP",odj.tienSP);
         values.put("ngay",String.valueOf(odj.ngay));
+        values.put("soLuongSP",odj.soLuongSP);
         values.put("thanhToan",odj.thanhtoan);
         return db.insert("HoaDon",null,values);
     }
+
     public  long update(HoaDon odj){
         ContentValues values = new ContentValues();
         values.put("maNV",odj.MaNV);
@@ -36,6 +38,7 @@ public class HoaDonDAO {
         values.put("maSP",odj.MaSP);
         values.put("tienSP",odj.tienSP);
         values.put("ngay",String.valueOf(odj.ngay));
+        values.put("soLuongSP",odj.soLuongSP);
         values.put("thanhToan",odj.thanhtoan);
         return db.update("HoaDon",values,"maHD=?",
                 new String[]{String.valueOf(odj.MaHD)});
@@ -65,6 +68,7 @@ public class HoaDonDAO {
             obj.MaSP = Integer.parseInt(c.getString(c.getColumnIndex("maSP")));
             obj.tienSP = Integer.parseInt(c.getString(c.getColumnIndex("tienSP")));
             obj.ngay = Date.valueOf(c.getString(c.getColumnIndex("ngay")));
+            obj.soLuongSP = Integer.parseInt(c.getString(c.getColumnIndex("soLuongSP")));
             obj.thanhtoan = Integer.parseInt(c.getString(c.getColumnIndex("thanhToan")));
             list.add(obj);
         }
