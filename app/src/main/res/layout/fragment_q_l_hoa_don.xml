@@ -7,7 +7,7 @@
     android:padding="10dp"
     tools:context=".main.ui.QLHoaDon">
     <ListView
-        android:id="@+id/phieumuon_listview"
+        android:id="@+id/hoadon_listview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
@@ -24,7 +24,7 @@
     </ListView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/phieumuon_fab"
+        android:id="@+id/hoadon_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/ic_input_add"

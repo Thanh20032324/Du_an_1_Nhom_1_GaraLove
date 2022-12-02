@@ -50,9 +50,8 @@ public class DbHelper extends SQLiteOpenHelper {
              "maNV text REFERENCES NhanVien(maNV), " +
              "maKH INTEGER REFERENCES KhachHang(maKH), "   +
              "maSP INTEGER REFERENCES SanPham(maSP), " +
-             "tienSP INTEGER NOT NULL, " +
              "ngay DATE NOT NULL, " +
-             "soLuongSP INTEGER NOT NULL, " +
+             "tienSP INTEGER NOT NULL, " +
              "thanhToan INTEGER NOT NULL)";
      db.execSQL(createTableHoaDon);
     }
