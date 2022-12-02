@@ -68,5 +68,9 @@ public class SanPhamDAO {
         String sql = "SELECT * FROM SanPham";
         return getData(sql);
     }
-
+public SanPham getID(String id){
+        String sql = "SELECT * FROM SanPham WHERE maSP=?";
+        List<SanPham> list = getData(sql,id);
+        return list.get(0);
+}
 }

@@ -26,7 +26,6 @@ public class HoaDonDAO {
         values.put("maSP",odj.MaSP);
         values.put("tienSP",odj.tienSP);
         values.put("ngay",String.valueOf(odj.ngay));
-        values.put("soLuongSP",odj.soLuongSP);
         values.put("thanhToan",odj.thanhtoan);
         return db.insert("HoaDon",null,values);
     }
@@ -38,13 +37,12 @@ public class HoaDonDAO {
         values.put("maSP",odj.MaSP);
         values.put("tienSP",odj.tienSP);
         values.put("ngay",String.valueOf(odj.ngay));
-        values.put("soLuongSP",odj.soLuongSP);
         values.put("thanhToan",odj.thanhtoan);
         return db.update("HoaDon",values,"maHD=?",
                 new String[]{String.valueOf(odj.MaHD)});
     }
     public int delete(String id){
-        return db.delete("HoaDon","maPM=?",new String[]{id});
+        return db.delete("HoaDon","maHD=?",new String[]{id});
     }
     public List<HoaDon> getAll(){
         String sql = "SELECT * FROM HoaDon";
@@ -63,12 +61,11 @@ public class HoaDonDAO {
         while (c.moveToNext()){
             HoaDon obj = new HoaDon();
             obj.MaHD = Integer.parseInt(c.getString(c.getColumnIndex("maHD")));
-            obj.MaNV = c.getString(c.getColumnIndex("maNv"));
+            obj.MaNV = c.getString(c.getColumnIndex("maNV"));
             obj.MaKH = Integer.parseInt(c.getString(c.getColumnIndex("maKH")));
             obj.MaSP = Integer.parseInt(c.getString(c.getColumnIndex("maSP")));
             obj.tienSP = Integer.parseInt(c.getString(c.getColumnIndex("tienSP")));
             obj.ngay = Date.valueOf(c.getString(c.getColumnIndex("ngay")));
-            obj.soLuongSP = Integer.parseInt(c.getString(c.getColumnIndex("soLuongSP")));
             obj.thanhtoan = Integer.parseInt(c.getString(c.getColumnIndex("thanhToan")));
             list.add(obj);
         }
