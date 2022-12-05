@@ -13,21 +13,6 @@
         android:textSize="40dp"
         android:id="@+id/item_tvtile"
         />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/add_til_name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/item_txtname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tên nhân viên" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/add_til_username"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
