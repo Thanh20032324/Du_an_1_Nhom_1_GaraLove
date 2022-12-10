@@ -30,9 +30,7 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
     QLSanPham fraSanPham;
     List<SanPham> list;
 
-    TextView tvTenSP,tvSoLuong,tvTonKho,tvGiaTien,tvDichVu;
-
-    ImageView ivDelete;
+    TextView tvTenSP,tvSoLuong,tvTonKho,tvGiaTien,tvDichVu,tvCongSua;
 
     public SanPhamAdapter(@NonNull Context context, QLSanPham fraSanPham, @NonNull List<SanPham> list) {
         super(context, 0, list);
@@ -67,7 +65,8 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
 
             tvGiaTien.setText("Giá tiền: "+item.getGiaSP()+" .VND");
 
-
+            tvCongSua = view.findViewById(R.id.tvCongSua);
+            tvCongSua.setText("Công sửa: "+item.getCongSua());
 
             DichVu dichVu= new DichVu();
             DichVuDAO DVdao = new DichVuDAO(getContext());
@@ -78,16 +77,7 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
             tvDichVu.setText("Tên dịch vụ: "+dichVu.tenDV);
 
 
-            ivDelete = view.findViewById(R.id.ivDeleteSP);
-
         }
-        ivDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fraSanPham.xoaLS(String.valueOf(item.getMaSP()));
-            }
-
-        });
 
 
         return view;

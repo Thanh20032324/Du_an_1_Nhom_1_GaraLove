@@ -61,8 +61,9 @@ public class DangXuat extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view =inflater.inflate(R.layout.fragment_dang_xuat, container, false);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
