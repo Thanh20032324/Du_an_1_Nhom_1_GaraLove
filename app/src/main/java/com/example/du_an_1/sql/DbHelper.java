@@ -44,7 +44,7 @@ public class DbHelper extends SQLiteOpenHelper {
              "soLuong INTEGER NOT NULL, " +
              "tonKho INTEGER NOT NULL, " +
              "giaSP INTEGER NOT NULL, " +
-             "congSua INTEGER NOT NULL, " +
+
              "maDV INTERGER REFERENCES DichVu(maDV))";
      db.execSQL(createTableSanPham);
 
