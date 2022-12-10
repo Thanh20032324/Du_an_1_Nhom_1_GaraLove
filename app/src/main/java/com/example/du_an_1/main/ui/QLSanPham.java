@@ -50,7 +50,7 @@ public class QLSanPham extends Fragment {
     SanPham sanPham;
     
 
-    EditText edTenSP, edSoLuong, edTonKho, edGiaSP,edMaSP,edCongSua;
+    EditText edTenSP, edSoLuong, edTonKho, edGiaSP,edMaSP;
     Spinner spnDV;
     Button btnSave, btnCancle;
     int maDV,positonDV;
@@ -135,7 +135,7 @@ public class QLSanPham extends Fragment {
         edTenSP  =dialog.findViewById(R.id.edTenSP);
         edSoLuong = dialog.findViewById(R.id.edSoLuong);
         edGiaSP = dialog.findViewById(R.id.edGiaSp);
-        edCongSua =dialog.findViewById(R.id.edCongSua);
+
         edTonKho = dialog.findViewById(R.id.edTonKho);
         spnDV =dialog.findViewById(R.id.spnDV);
         btnSave = dialog.findViewById(R.id.btnSaveSP);
@@ -165,7 +165,7 @@ public class QLSanPham extends Fragment {
             edMaSP.setText(String.valueOf(sanPham.getMaSP()));
             edTenSP.setText(sanPham.getTenSP());
             edSoLuong.setText(String.valueOf(sanPham.getSoLuong()));
-            edCongSua.setText(String.valueOf(sanPham.getCongSua()));
+
             edTonKho.setText(String.valueOf(sanPham.getTonKho()));
             edGiaSP.setText(String.valueOf(sanPham.getGiaSP()));
             for (int i=0;i<listDV.size();i++){
@@ -201,7 +201,7 @@ public class QLSanPham extends Fragment {
                 sanPham.setSoLuong(Integer.parseInt(edSoLuong.getText().toString()));
                 sanPham.setTonKho(Integer.parseInt(edTonKho.getText().toString()));
                 sanPham.setGiaSP(Integer.parseInt(edGiaSP.getText().toString()));
-                sanPham.setCongSua(Integer.parseInt(edCongSua.getText().toString()));
+
                 sanPham.setMaDV(maDV);
 
                 if(validate()>0){

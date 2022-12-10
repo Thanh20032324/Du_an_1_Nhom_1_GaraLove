@@ -65,8 +65,7 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
 
             tvGiaTien.setText("Giá tiền: "+item.getGiaSP()+" .VND");
 
-            tvCongSua = view.findViewById(R.id.tvCongSua);
-            tvCongSua.setText("Công sửa: "+item.getCongSua());
+
 
             DichVu dichVu= new DichVu();
             DichVuDAO DVdao = new DichVuDAO(getContext());

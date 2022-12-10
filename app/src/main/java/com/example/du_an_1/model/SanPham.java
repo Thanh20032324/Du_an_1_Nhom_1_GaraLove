@@ -3,7 +3,7 @@ package com.example.du_an_1.model;
 public class SanPham {
     public int maSP;
     public String tenSP;
-    public int soLuong,tonKho,giaSP,congSua,maDV;
+    public int soLuong,tonKho,giaSP,maDV;
 
     public SanPham(int maSP, String tenSP, int soLuong, int tonKho, int giaSP, int congSua, int maDV) {
         this.maSP = maSP;
@@ -11,7 +11,7 @@ public class SanPham {
         this.soLuong = soLuong;
         this.tonKho = tonKho;
         this.giaSP = giaSP;
-        this.congSua = congSua;
+
         this.maDV = maDV;
     }
 
@@ -64,14 +64,6 @@ public class SanPham {
 
     public void setMaDV(int maDV) {
         this.maDV = maDV;
-    }
-
-    public int getCongSua() {
-        return congSua;
-    }
-
-    public void setCongSua(int congSua) {
-        this.congSua = congSua;
     }
 
     @Override

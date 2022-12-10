@@ -28,7 +28,6 @@ public class SanPhamDAO {
         values.put("soLuong",sp.soLuong);
         values.put("tonKho",sp.tonKho);
         values.put("giaSP",sp.giaSP);
-        values.put("congSua",sp.congSua);
         values.put("maDV",sp.maDV);
         Log.d("SP",sp.toString());
         return db.insert("SanPham",null,values);
@@ -41,7 +40,6 @@ public class SanPhamDAO {
         values.put("soLuong",sp.soLuong);
         values.put("tonKho",sp.tonKho);
         values.put("giaSP",sp.giaSP);
-        values.put("congSua",sp.congSua);
         values.put("maDV",sp.maDV);
         return db.update("SanPham",values, "maSP=?",new String[]{String.valueOf(sp.maSP)});
     }
@@ -61,7 +59,6 @@ public class SanPhamDAO {
             sanPham.soLuong = Integer.parseInt(c.getString(c.getColumnIndex("soLuong")));
             sanPham.tonKho = Integer.parseInt(c.getString(c.getColumnIndex("tonKho")));
             sanPham.giaSP = Integer.parseInt(c.getString(c.getColumnIndex("giaSP")));
-            sanPham.congSua = Integer.parseInt(c.getString(c.getColumnIndex("congSua")));
             sanPham.maDV = Integer.parseInt(c.getString(c.getColumnIndex("maDV")));
             list.add(sanPham);
         }
