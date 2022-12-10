@@ -30,7 +30,7 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
     QLSanPham fraSanPham;
     List<SanPham> list;
 
-    TextView tvTenSP,tvSoLuong,tvTonKho,tvGiaTien,tvDichVu,tvCongSua;
+    TextView tvTenSP,tvSoLuong,tvTonKho,tvGiaTien,tvDichVu;
 
     public SanPhamAdapter(@NonNull Context context, QLSanPham fraSanPham, @NonNull List<SanPham> list) {
         super(context, 0, list);
@@ -65,8 +65,6 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
 
             tvGiaTien.setText("Giá tiền: "+item.getGiaSP()+" .VND");
 
-            tvCongSua = view.findViewById(R.id.tvCongSua);
-            tvCongSua.setText("Công sửa: "+item.getCongSua());
 
             DichVu dichVu= new DichVu();
             DichVuDAO DVdao = new DichVuDAO(getContext());
