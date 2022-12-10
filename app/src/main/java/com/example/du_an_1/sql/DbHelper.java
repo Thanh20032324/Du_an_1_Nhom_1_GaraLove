@@ -37,6 +37,7 @@ public class DbHelper extends SQLiteOpenHelper {
              "tenDV text NOT NULL)";
      db.execSQL(createTableDichVu);
 
+
      String createTableSanPham="create table SanPham(" +
              "maSP INTEGER PRIMARY KEY AUTOINCREMENT, "+
              "tenSP text NOT NULL, " +
@@ -45,6 +46,7 @@ public class DbHelper extends SQLiteOpenHelper {
              "giaSP INTEGER NOT NULL, " +
              "maDV INTERGER REFERENCES DichVu(maDV))";
      db.execSQL(createTableSanPham);
+
      String createTableHoaDon="create table HoaDon(" +
              "maHD INTEGER PRIMARY KEY AUTOINCREMENT, " +
              "maNV text REFERENCES NhanVien(maNV), " +
@@ -54,6 +56,7 @@ public class DbHelper extends SQLiteOpenHelper {
              "tienSP INTEGER NOT NULL, " +
              "thanhToan INTEGER NOT NULL)";
      db.execSQL(createTableHoaDon);
+
     }
 
     @Override

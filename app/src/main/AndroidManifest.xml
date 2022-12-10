@@ -11,15 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Du_an_1">
         <activity
+            android:name=".ListSanPhamActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.MainGiaoDien"
             android:exported="false"
             android:label="@string/title_activity_maingiaodien"
-            android:theme="@style/Theme.Du_an_1.NoActionBar"/>
+            android:theme="@style/Theme.Du_an_1.NoActionBar" />
         <activity
-            android:name="com.example.du_an_1.MainActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.du_an_1.MainManHinhChao"
+            android:name=".MainManHinhChao"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

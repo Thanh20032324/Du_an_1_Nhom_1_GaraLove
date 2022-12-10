@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
         <entry key="..\:/DuAn_1/app/src/main/res/layout/item_san_pham.xml" value="0.25" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/drawable-v24/ic_ock.xml" value="0.1" />
@@ -33,7 +34,7 @@
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_them.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/fragment_top.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/item_lv_addkh.xml" value="0.4" />
-        <entry key="..\:/Du_an_1/app/src/main/res/layout/item_lv_addnv.xml" value="0.264" />
+        <entry key="..\:/Du_an_1/app/src/main/res/layout/item_lv_addnv.xml" value="0.1" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/item_lv_hoadon.xml" value="0.4" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/item_lv_nv.xml" value="0.2" />
         <entry key="..\:/Du_an_1/app/src/main/res/layout/item_san_pham.xml" value="0.11197916666666667" />

@@ -64,4 +64,16 @@ public class SanPham {
     public void setMaDV(int maDV) {
         this.maDV = maDV;
     }
+
+    @Override
+    public String toString() {
+        return "SanPham{" +
+                "maSP=" + maSP +
+                ", tenSP='" + tenSP + '\'' +
+                ", soLuong=" + soLuong +
+                ", tonKho=" + tonKho +
+                ", giaSP=" + giaSP +
+                ", maDV=" + maDV +
+                '}';
+    }
 }

@@ -109,7 +109,9 @@ public class QLDichVu extends Fragment {
         }
         TextView tvTile = (TextView) dialog.findViewById(R.id.item_tvtile);
         txtnameuser = dialog.findViewById(R.id.item_txtnameuser);
+
         txtname = dialog.findViewById(R.id.item_txtpass);
+
 
         tilusername = dialog.findViewById(R.id.add_til_username);
         tilname = dialog.findViewById(R.id.add_til_pass);

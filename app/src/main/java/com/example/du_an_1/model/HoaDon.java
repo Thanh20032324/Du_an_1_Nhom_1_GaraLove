@@ -25,4 +25,18 @@ public class HoaDon {
         this.ngay = ngay;
         this.thanhtoan = thanhtoan;
     }
+
+    @Override
+    public String toString() {
+        return "HoaDon{" +
+                "MaHD=" + MaHD +
+                ", MaNV='" + MaNV + '\'' +
+                ", MaKH=" + MaKH +
+                ", MaSP=" + MaSP +
+                ", tienSP=" + tienSP +
+                ", soLuongSP=" + soLuongSP +
+                ", ngay=" + ngay +
+                ", thanhtoan=" + thanhtoan +
+                '}';
+    }
 }
