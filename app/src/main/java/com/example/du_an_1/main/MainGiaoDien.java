@@ -68,7 +68,6 @@ private ActivityMainGiaoDienBinding binding;
                 R.id.nav_qlloaisach,
                 R.id.nav_quanlysach,
                 R.id.nav_qlthanhvien,
-                R.id.nav_top,
                 R.id.nav_doanhthu,
                 R.id.nav_them,
                 R.id.nav_matkhau,

@@ -23,11 +23,7 @@
         <item android:title="Thống kê"
             android:id="@+id/nav_thongke">
             <menu>
-                <item
-                    android:id="@+id/nav_top"
-                    android:icon="@android:drawable/stat_sys_upload"
-                    android:title="10 Dịch Vụ Nhiều Nhất"
-                    />
+
                 <item
                     android:id="@+id/nav_doanhthu"
                     android:icon="@android:drawable/btn_star"
